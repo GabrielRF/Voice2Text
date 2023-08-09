@@ -8,12 +8,12 @@ api_id =
 api_hash = ""
 
 app = Client("Voice2Text", api_id=api_id, api_hash=api_hash)
-model = whisper.load_model("base")
 
 def remove_file(voice_file):
     os.remove(voice_file)
 
 def voice_to_text(voice_file, i=0):
+    model = whisper.load_model("base")
     if i == 5:
         return False
     try:
